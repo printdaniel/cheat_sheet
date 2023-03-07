@@ -217,6 +217,22 @@ registro predeterminado de la siguiente manera:
 logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.DEBUG)
 
 
+#######################
+# Decorador para perfo
+#######################
+
+def medir_tiempo(func):
+    def wrapper(*args, **kwargs):
+        inicio = time.time()
+        resultado = func(*args, **kwargs)
+        fin = time.time()
+        print(
+            f"La función {func.__name__} tardó {fin - inicio:.5f} segundos en ejecutarse.")
+        return resultado
+    return wrapper
 
 
+@medir_tiempo
+def tiempo():
+    time.sleep(3)
 
