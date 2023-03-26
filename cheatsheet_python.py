@@ -1,5 +1,4 @@
 import unittest
-
 ##############
 # Función MAP# 
 ##############
@@ -18,7 +17,7 @@ tupla, etc. utilizando la función list(), tuple(), etc.
 
 Ejemplo:
 """
-def cuadrado(x):
+def cuadrado,x):
     return x**2
 
 numeros = [1,2,4,5,6]
@@ -39,8 +38,6 @@ unittest.main()
 #################
 # Función FILTER# 
 #################
-
-
 """ 
 filter es una función en Python que permite filtrar elementos de un objeto 
 iterable utilizando una función. La sintaxis de filter es la siguiente:
@@ -79,7 +76,6 @@ unittest.main()
 #################
 # Función REDUCE# 
 #################
-
 """ 
 reduce es una función en Python que permite reducir una secuencia (por ejemplo, 
 una lista) a un solo valor combinando elementos de la secuencia de forma secuencial. 
@@ -112,8 +108,6 @@ print(sum_of_numbers) # 15
 #################
 # Función REDUCE# 
 #################
-
-
 """ 
 set es una estructura de datos en Python que permite almacenar valores únicos. 
 La función intersection se usa para calcular la intersección entre dos conjuntos, 
@@ -139,7 +133,6 @@ unittest.main()
 ############################################################
 # Unittest con suites, (crear varias instancias)
 ############################################################
-
 from math_functions import *
 from string_functions import *
 
@@ -220,6 +213,16 @@ logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=loggin
 #######################
 # Decorador para perfo
 #######################
+"""En Python, un decorador es una función que toma otra función como entrada, 
+y devuelve una nueva función como salida. El decorador actúa como un 
+envoltorio (wrapper) alrededor de la función original, añadiendo alguna 
+funcionalidad adicional sin modificar la función original.
+
+Los decoradores se utilizan para modificar el comportamiento de una función 
+sin tener que cambiar su código. Se pueden utilizar para agregar 
+funcionalidades a una función existente, como medición del tiempo de 
+ejecución, validación de parámetros, manejo de excepciones, autenticación 
+y autorización, y muchos otros propósitos."""
 
 def medir_tiempo(func):
     def wrapper(*args, **kwargs):
@@ -236,3 +239,34 @@ def medir_tiempo(func):
 def tiempo():
     time.sleep(3)
 
+
+########################
+# Decoradores más usados
+########################
+
+"""
+@staticmethod: Este decorador se utiliza para definir métodos estáticos en una 
+clase. Los métodos estáticos son aquellos que no requieren acceso a los 
+atributos de instancia de la clase.
+
+@classmethod: Este decorador se utiliza para definir métodos de clase en una 
+clase. Los métodos de clase son aquellos que operan en la clase en sí misma, 
+en lugar de en una instancia de la clase.
+
+@property: Este decorador se utiliza para definir propiedades de instancia en 
+una clase. Las propiedades son atributos que se comportan como métodos, 
+permitiendo la validación o procesamiento adicional de los valores de los 
+atributos antes de asignarlos o devolverlos.
+
+@abstractmethod: Este decorador se utiliza para definir métodos abstractos 
+en una clase. Los métodos abstractos son aquellos que deben ser implementados 
+en las subclases, y no tienen una implementación en la clase base.
+
+@wraps: Este decorador se utiliza para preservar la información de la 
+función original en una función envoltorio, incluyendo el nombre, la 
+documentación y los argumentos.
+
+@lru_cache: Este decorador se utiliza para cachear los resultados de una 
+función y evitar que se vuelvan a calcular en futuras llamadas con los mismos 
+argumentos.
+"""
