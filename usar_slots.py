@@ -29,3 +29,9 @@ class MyClass1(object):
         self.name= name
         self.identifier = identifier
  
+# En caso de usar herencia
+class BaseClass(object):
+    __slots__ = ['attribute1', 'attribute2']
+
+class SubClass(BaseClass):
+    __slots__ = ['attribute3']
