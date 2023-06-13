@@ -12,6 +12,8 @@ funcionalidades a una función existente, como medición del tiempo de
 ejecución, validación de parámetros, manejo de excepciones, autenticación 
 y autorización, y muchos otros propósitos."""
 
+import time
+
 def medir_tiempo(func):
     def wrapper(*args, **kwargs):
         inicio = time.time()
@@ -39,3 +41,10 @@ def measure_time(func):
         return result
     return wrapper
 
+@measure_time
+def tiempo1():
+    time.sleep(3)
+
+if __name__ == '__main__':
+    tiempo()
+    tiempo1()
