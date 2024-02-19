@@ -121,14 +121,138 @@ print(grid_extended)
 dict_grid_extended = {(x,y): math.hypot(x,y) for x, y in grid}
 print(dict_grid_extended)
 
-
-###############################################################################
-# from keys
-
 counters = dict.fromkeys(['a', 'b', 'c'], 0)
 print(counters)
 
 d = dict.fromkeys('python')
 print(d)
+###############################################################################
+# Operaciones básicas
+
+d = dict(zip("abc", range(1,4)))
+print(d)
+
+print(len(d))
+print(d['a'])
+print(d.get('a'))
+
+d.get('z', 'N/A')
+
+print(d)
+
+# Hacer un contador
+
+text = 'Programa siempre tu código como si el tipo que va a tener que mantenerlo en el futuro fuera un violento psicópata que sabe donde vives.'
+
+counts = dict()
+
+for c in text:
+    counts[c] = counts.get(c,0) + 1
+
+print(counts)
+
+# otro contador
+counts = dict()
+
+for c in text:
+    key = c.lower().strip()
+    if key:
+        counts[key] = counts.get(key, 0) + 1 
+print(counts)
+
+# contador de upercase y lowercase
+
+import string
+
+print(string.ascii_lowercase)
+print(string.ascii_uppercase)
+
+categories = {}
+for c in text:
+    if c != ' ':
+        if c in string.ascii_lowercase:
+            key = 'lower'
+        elif c in string.ascii_uppercase:
+            key = 'upper'
+        else:
+            key = 'other'
+        if key not in categories:
+            categories[key] = set()
+
+        categories[key].add(c)
+
+for cat in categories:
+    print(f'{cat}:',''.join(categories[cat]))
+
+# Más simple
+categories = {}
+for c in text:
+    if c != ' ':
+        if c in string.ascii_lowercase:
+            key = 'lower'
+        elif c in string.ascii_uppercase:
+            key = 'upper'
+        else:
+            key = 'other'
+        categories.setdefault(key, set()).add(c)
+
+
+for cat in categories:
+    print(f'{cat}:',''.join(categories[cat]))
+
+# Con una función
+def cat_key(c):
+    if c == ' ':
+        return None
+    elif c in string.ascii_lowercase:
+        return 'lower'
+    elif c in string.ascii_uppercase:
+        return 'upper'
+    else:
+        return 'other'
+
+categories = {}
+for c in text:
+    key = cat_key(c)
+    if key:
+        categories.setdefault(key, set()).add(c)
+
+for cat in categories:
+    print(f'{cat}:',''.join(categories[cat]))
+
+# Una versión más Pro 
+
+def cat_key(c):
+    categories = {' ': None,
+                  string.ascii_lowercase: 'lower',
+                  string.ascii_uppercase: 'upper'}
+    for key in categories:
+        if c in key:
+            return categories[key]
+    else:
+        return 'other'
+
+
+print(cat_key('a'))
+print(cat_key('A'))
+print(cat_key(','))
+
+# Otra manera
+
+from itertools import chain
+
+def cat_key(c):
+    cat_1 = {' ': None}
+    cat_2 = dict.fromkeys(string.ascii_lowercase, 'lower')
+    cat_3 = dict.fromkeys(string.ascii_uppercase: 'upper')
+
+    return categories.get(c, 'other')
+
+    categories = dict(chain(cat_1.items(), cat_2.items(), cat_3.items()))
+
+
+
+
+
 
 
