@@ -259,7 +259,46 @@ print(type(union)) # Es un set
 intersections = d1.keys() & d2.keys()
 print(intersections)
 
+# Updating, Merging and Copying
+d = {'a': 1, 'b': 2, 'c': 3}
+d['b'] = 200
+print(d)
 
+# otro método
+d1 = {'a': 1, 'b': 2}
+d2 = {'c': 3, 'd': 4}
 
+d1.update(d2)
+print(d1)
 
+# También se puede usar formas más complejas
+d = {'a': 1, 'b': 2}
+d.update((k, ord(k)) for k in 'python')
+print(d)
+
+# Unpacking dictionaries
+l1 = [1, 2, 3]
+l2 = 'abc'
+l = (*l1, *l2)
+print(l)
+
+conf_defaults = dict.fromkeys(('host', 'port', 'user', 'pwd', 'database'), None)
+print(conf_defaults)
+
+conf_global = {
+    'port': 5432,
+    'database': 'deepdive'}
+
+conf_dev = {
+    'host': 'localhost',
+    'user': 'test',
+    'pwd': 'test'
+}
+
+conf_prod = {
+    'host': 'prodpg.deepdive.com',
+    'user': '$prod_user',
+    'pwd': '$prod_pwd',
+    'database': 'deepdive_prod'
+}
 
