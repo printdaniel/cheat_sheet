@@ -93,29 +93,22 @@ for k, v in zip(keys,values):
 
 print(d)
 
-
 d = {k:v for k, v in zip(keys, values)}
 print(d)
 
-
 keys = 'abcd'
 values = range(1,10)
-
 d = {k: v for  k,v in zip(keys, values) if v % 2==0}
 print(d)
 
 x_coords = (-2,-1,0,1,2)
 y_coords = (-2,-1,0,1,2)
-
 grid = [(x,y) for x in x_coords for y in y_coords]
-
 print(grid)
 
 import math
 
-
 grid_extended = [(x,y, math.hypot(x,y)) for x, y in grid]
-
 print(grid_extended)
 
 dict_grid_extended = {(x,y): math.hypot(x,y) for x, y in grid}
@@ -137,11 +130,9 @@ print(d['a'])
 print(d.get('a'))
 
 d.get('z', 'N/A')
-
 print(d)
 
 # Hacer un contador
-
 text = 'Programa siempre tu código como si el tipo que va a tener que mantenerlo en el futuro fuera un violento psicópata que sabe donde vives.'
 
 counts = dict()
@@ -161,7 +152,6 @@ for c in text:
 print(counts)
 
 # contador de upercase y lowercase
-
 import string
 
 print(string.ascii_lowercase)
@@ -221,7 +211,6 @@ for cat in categories:
     print(f'{cat}:',''.join(categories[cat]))
 
 # Una versión más Pro 
-
 def cat_key(c):
     categories = {' ': None,
                   string.ascii_lowercase: 'lower',
@@ -232,25 +221,43 @@ def cat_key(c):
     else:
         return 'other'
 
-
 print(cat_key('a'))
 print(cat_key('A'))
 print(cat_key(','))
 
 # Otra manera
-
 from itertools import chain
 
 def cat_key(c):
     cat_1 = {' ': None}
     cat_2 = dict.fromkeys(string.ascii_lowercase, 'lower')
-    cat_3 = dict.fromkeys(string.ascii_uppercase: 'upper')
-
-    return categories.get(c, 'other')
+    cat_3 = dict.fromkeys(string.ascii_uppercase, 'upper')
 
     categories = dict(chain(cat_1.items(), cat_2.items(), cat_3.items()))
+    return categories.get(c, 'other')
 
+print(categories)
 
+###############################################################################
+# Operaciones views
+
+s1 = {1, 2,  3}
+s2 = {2, 2,  4}
+
+print(s1 | s2)
+print(s1 & s2)
+print(s1 - s2)
+print(s2 - s1)
+
+d1 = {'a': 1, 'b':2, 'c': 3}
+d2 =  dict(zip('cde', [30, 4, 5]))
+print(d1, d2)
+
+union = d1.keys() | d2.keys()
+print(type(union)) # Es un set
+
+intersections = d1.keys() & d2.keys()
+print(intersections)
 
 
 
