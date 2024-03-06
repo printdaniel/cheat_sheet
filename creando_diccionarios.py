@@ -46,7 +46,6 @@ print(d[(1,2,3)])
 
 ###############################################################################
 # Funciones en la key
-
 def my_func(a,b,c):
     print(a, b, c)
 
@@ -74,16 +73,13 @@ for f in funcs:
 for f, args in funcs.items():
     print(f(*args))
 
-
 ###############################################################################
 # Creación de diccionarios usando el constructor
-
 d = dict([('a',100), ['x',200]])
 
 print(d)
 ###############################################################################
 # otra manera de crear diccionarios
-
 keys = ['a', 'b', 'c']
 values = (1,2,3)
 
