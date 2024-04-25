@@ -8,8 +8,6 @@ elements(): Devuelve un iterador que produce todos los elementos en el Counter.
 update(iterable): Actualiza el Counter con elementos de otro iterable.
 subtract(iterable): Resta elementos de otro iterable del Counter."""
 
-
-
 if __name__ == '__main__':
     lista = [1,2,3,1,2,4,5,1,3]
     contador = Counter(lista)
