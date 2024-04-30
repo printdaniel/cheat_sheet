@@ -32,19 +32,19 @@ def bubbleSort_you(l):
 @medir_tiempo
 def bubble_sort_perplexity(l):
     """
-    Implementación optimizada del algoritmo de ordenamiento Bubble Sort que 
+    Implementación optimizada del algoritmo de ordenamiento Bubble Sort que
     ordena una lista de elementos en orden ascendente.
-    
+
     Parámetros:
     l (list): La lista de elementos a ordenar.
-    
+
     Retorna:
     list: La lista ordenada en orden ascendente.
-    
+
     Descripción:
-    Esta función utiliza una bandera 'swapped' para controlar si se realizan 
+    Esta función utiliza una bandera 'swapped' para controlar si se realizan
     intercambios en cada pasada del arreglo.
-    Si no se realizan intercambios en una pasada completa, se asume que el 
+    Si no se realizan intercambios en una pasada completa, se asume que el
     arreglo está ordenado y se detiene la ejecución.
     """
     n = len(l)
@@ -61,19 +61,19 @@ def bubble_sort_perplexity(l):
 @medir_tiempo
 def bubble_sort_gemini(l):
     """
-    Implementación del algoritmo de ordenamiento Bubble Sort que ordena una 
+    Implementación del algoritmo de ordenamiento Bubble Sort que ordena una
     lista de elementos en orden ascendente.
-    
+
     Parámetros:
     l (list): La lista de elementos a ordenar.
-    
+
     Retorna:
     list: La lista ordenada en orden ascendente.
-    
+
     Descripción:
-    Esta función utiliza una técnica de optimización con una variable 'intercambios' 
+    Esta función utiliza una técnica de optimización con una variable 'intercambios'
     para controlar si se realizan intercambios en cada pasada del arreglo.
-    Si no se realizan intercambios en una pasada completa, se asume que 
+    Si no se realizan intercambios en una pasada completa, se asume que
     el arreglo está ordenado y se detiene la ejecución.
     """
     n = len(l)
